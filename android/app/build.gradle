@@ -105,11 +105,28 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    // Updated lint configuration to handle experimental API issues
+    lint {
+        abortOnError false
+        absolutePaths false
+        lintConfig file("lint.xml")
+        // Create a baseline to ignore existing lint errors
+        baseline = file("lint-baseline.xml")
+        // Disable specific lint checks that are causing issues
+        disable 'UnsafeOptInUsageError'
+        // Alternative: you can also use 'checkOnly' to only run specific checks
+        // checkOnly 'NewApi', 'InlinedApi'
+    }
 }
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+
+    apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">EmpiteTest</string>
+    <string name="app_name">Empite Solutions</string>
+    <string name="facebook_app_id">FACEBOOK_APP_ID</string>
+    <string name="fb_login_protocol_scheme">fbFACEBOOK_APP_ID</string>
+    <string name="facebook_client_token">FACEBOOK_CLIENT_TOKEN</string>
+    <string name="google_maps_api_key">GOOGLE_MAPS_API_KEY</string>
 </resources>
